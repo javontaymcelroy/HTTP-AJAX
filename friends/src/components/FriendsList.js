@@ -1,15 +1,15 @@
 import React from 'react';
+
 import Friend from './Friend';
 
-const FriendsList = ({ friends }) => {
+const FriendList = props => {
   return (
-    <div>
-      <h1> Friends List </h1>
-      {friends.map(friend => (
-        <Friend name={friend.name} age={friend.age} email={friend.email} />
+    <>
+      {props.friends.map(friend => (
+        <Friend {...friend} key={friend.id} />
       ))}
-    </div>
+    </>
   );
 };
 
-export default FriendsList;
+export default FriendList;

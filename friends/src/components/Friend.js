@@ -1,12 +1,15 @@
 import React from 'react';
+import '../App.css';
 
-const Friend = ({ name, age, email }) => {
+const Friend = props => {
   return (
-    <div>
-      <p>Name: {name} </p>
-      <p>Age: {age} </p>
-      <p>Email: {email} </p>
-    </div>
+    <>
+      <h2>{props.name}</h2>
+      <ul>
+        <li>Age: {props.age}</li>
+        <li>Email: {props.email}</li>
+      </ul>
+    </>
   );
 };
 

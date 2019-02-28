@@ -1,39 +1,33 @@
 import React from 'react';
+import '../App.css';
 
-class FriendForm extends React.Component {
-  state = {
-    name: '',
-    age: '',
-    email: ''
-  };
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = () => {};
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>add friend</h1>
-        <input
-          name='name'
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <input name='age' value={this.state.age} onChange={this.handleChange} />
-        <input
-          name='email'
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-        <button>submit</button>
-      </form>
-    );
-  }
-}
+const FriendForm = props => {
+  return (
+    <form action='POST' className='form' onSubmit={props.handleSubmit}>
+      <input
+        type='text'
+        name='name'
+        value={props.name}
+        onChange={props.handleChange}
+        placeholder='name'
+      />
+      <input
+        type='text'
+        name='age'
+        value={props.age}
+        onChange={props.handleChange}
+        placeholder='age'
+      />
+      <input
+        type='email'
+        name='email'
+        value={props.email}
+        onChange={props.handleChange}
+        placeholder='email'
+      />
+      <button>Add Friend</button>
+    </form>
+  );
+};
 
 export default FriendForm;
